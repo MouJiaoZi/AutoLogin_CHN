@@ -25,6 +25,8 @@ namespace AutoLogin
         public bool SetCharacter { get; set; }
         public int CharacterSlot { get; set; }
         public bool EnterWorld { get; set; }
+        public bool SetWTF { get; set; }
+        public string WTFPath { get; set; }
         public override string ToString()
         {
             return Name;

@@ -36,9 +36,9 @@ namespace AutoLogin
             btnClose.Visible = false;
             btnSave.Visible = false;
             btnSubmit.Visible = true;
-            this.AcceptButton = btnSubmit;
-            this.Text = "Enter your password";
-            this.Height = 110;
+            this.Text = "请输入密码";
+            //txtCurrent.Width = 226;
+            this.Height = 130;
             this.ShowDialog(mForm);
         }
 
@@ -50,7 +50,7 @@ namespace AutoLogin
                 {
                     if (txtCurrent.Text == txtNew.Text)
                     {
-                        MessageBox.Show("New password cannot be \nthe same as the old one!");
+                        MessageBox.Show("新密码不能与旧密码相同！");
                     }
                     else
                     {
@@ -59,19 +59,19 @@ namespace AutoLogin
                         writer.Serialize(file, MainForm.SETTINGS);
                         file.Close();
                         MainForm.PASSWORD = txtNew.Text;
-                        MainForm.SETTINGS.HasPassword = true;
-                        MessageBox.Show("Password changed successfully!");
+                        MainForm.SETTINGS.HasPassword = !(txtNew.Text == "");
+                        MessageBox.Show(MainForm.SETTINGS.HasPassword ? "密码已修改" : "已移除密码，请注意账号安全");
                         this.Close();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Passwords do not match!");
+                    MessageBox.Show("两次密码输入不一致，请重新输入");
                 }
             }
             else
             {
-                MessageBox.Show("Current password incorrect!");
+                MessageBox.Show("密码错误");
             }
         }
 
@@ -80,10 +80,12 @@ namespace AutoLogin
             this.Close();
         }
 
+
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             MainForm.PASSWORD = txtCurrent.Text;
             this.Close();
         }
+
     }
 }

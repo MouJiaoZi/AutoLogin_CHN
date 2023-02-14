@@ -86,12 +86,6 @@
     <Compile Include="AddEditForm.Designer.cs">
       <DependentUpon>AddEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditAccountNameForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditAccountNameForm.Designer.cs">
-      <DependentUpon>EditAccountNameForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="GetResolution.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Options.cs" />
@@ -117,17 +111,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UpdateForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UpdateForm.Designer.cs">
-      <DependentUpon>UpdateForm.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="AddEditForm.resx">
       <DependentUpon>AddEditForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditAccountNameForm.resx">
-      <DependentUpon>EditAccountNameForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PasswordForm.resx">
       <DependentUpon>PasswordForm.cs</DependentUpon>
@@ -147,9 +132,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UpdateForm.resx">
-      <DependentUpon>UpdateForm.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -169,7 +151,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 和 x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

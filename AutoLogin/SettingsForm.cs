@@ -15,7 +15,7 @@ namespace AutoLogin
 {
     public partial class SettingsForm : Form
     {
-        MainForm mForm;
+        MainForm mForm = new MainForm();
 
         public SettingsForm()
         {
@@ -32,7 +32,6 @@ namespace AutoLogin
         {
             // Load from settings
             txtWowPath.Text = MainForm.SETTINGS.WowPath;
-            chkUpdate.Checked = MainForm.SETTINGS.AutoUpdate;
             chkMinimize.Checked = MainForm.SETTINGS.Minimize;
             chkHide.Checked = MainForm.SETTINGS.Hide;
         }
@@ -40,14 +39,13 @@ namespace AutoLogin
         private void btnSave_Click(object sender, EventArgs e)
         {
             // Check to see if Wow.exe exists in the selected folder
-            if (!File.Exists(txtWowPath.Text + @"\Wow.exe"))
+            if (!File.Exists(txtWowPath.Text))
             {
-                MessageBox.Show("Could not find Wow.exe." + Environment.NewLine + "Please browse to your World of Warcraft folder.");
+                MessageBox.Show("未找到魔兽世界可执行程序，请指定程序目录。");
             }
             else
             {
                 MainForm.SETTINGS.WowPath = txtWowPath.Text;
-                MainForm.SETTINGS.AutoUpdate = chkUpdate.Checked;
                 MainForm.SETTINGS.Minimize = chkMinimize.Checked;
                 MainForm.SETTINGS.Hide = chkHide.Checked;
                 mForm.SaveSettings();
@@ -63,10 +61,13 @@ namespace AutoLogin
         private void btnBrowse_Click(object sender, EventArgs e)
         {
             // Open new folder browser dialog
-            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            OpenFileDialog fbd = new OpenFileDialog();
+            fbd.Multiselect = false;
+            fbd.Title = "请选择要启动的魔兽世界可执行程序";
+            fbd.Filter = "可执行程序(*.exe)|*.exe";
             if (fbd.ShowDialog() == DialogResult.OK)
             {
-                txtWowPath.Text = fbd.SelectedPath;
+                txtWowPath.Text = fbd.FileName;
             }
         }
 

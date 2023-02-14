@@ -5,10 +5,10 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AutoLogin")]
-[assembly: AssemblyDescription("World of Warcraft Auto Logger")]
+[assembly: AssemblyTitle("魔兽世界自动登录")]
+[assembly: AssemblyDescription("自动登录一个或多个魔兽世界账号")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("iZastic")]
+[assembly: AssemblyCompany("iZastic 修改：某餃子")]
 [assembly: AssemblyProduct("AutoLogin")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]

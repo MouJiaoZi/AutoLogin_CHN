@@ -10,7 +10,7 @@ namespace AutoLogin
     {
         public bool SetRealm = true,
                     SetResolution = true,
-                    SetAccountName = true,
+                    SetAccountName = false,
                     SetAccountList = true,
                     SetGraphicsQuality = true,
                     SetLastCharacterIndex = true;
@@ -38,7 +38,7 @@ namespace AutoLogin
             {
                 list.Add("SET gxWindow \"1\"");
                 list.Add("SET gxMaximize \"0\"");
-                list.Add("SET gxResolution \"" + account.Resolution.Replace(" ", string.Empty) + "\"");
+                list.Add("SET gxWindowedResolution \"" + account.Resolution.Replace(" ", string.Empty) + "\"");
             }
             else
             {
@@ -72,8 +72,8 @@ namespace AutoLogin
             if (SetGraphicsQuality && account.LowDetail)
             {
                 list.Add("SET hwDetect \"0\"");
-                list.Add("SET graphicsQuality \"0\"");
-                list.Add("SET gxApi \"D3D9\"");
+                list.Add("SET graphicsQuality \"1\"");
+                list.Add("SET gxApi \"D3D11\"");
             }
             else
             {
